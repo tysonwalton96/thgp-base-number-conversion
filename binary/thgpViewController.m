@@ -37,7 +37,6 @@
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
-// converter fuction that takes any base 
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -57,6 +56,7 @@ numberOfRowsInComponent:(NSInteger)component
     return[pickerData objectAtIndex:row];
 }
 
+// converter fuction that takes any base 
 
 -(IBAction)converter:(id)sender{
     NSString *output;

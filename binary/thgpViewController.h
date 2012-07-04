@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface thgpViewController : UIViewController {
+@interface thgpViewController : UIViewController
+<UIPickerViewDataSource , UIPickerViewDelegate>
+{
     
     UITextField *inputText;
     UITextField *outputText;

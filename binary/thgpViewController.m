@@ -15,9 +15,14 @@
 @implementation thgpViewController
 
 @synthesize inputText, outputText;
+@synthesize singlePicker;
+@synthesize pickerData;
+
 
 - (void)viewDidLoad
 {
+    NSArray *array = [[NSArray alloc]        initWithObjects:@"1",@"2",@"3",@"4",@"5", @"6", @"7", @"8", @"9",nil];
+    self.pickerData = array;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -34,7 +39,23 @@
 }
 // converter fuction that takes any base 
 
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
 
+-(NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return [pickerData count];
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView
+            titleForRow:(NSInteger)row
+           forComponent:(NSInteger)component 
+{
+    return[pickerData objectAtIndex:row];
+}
 
 
 -(IBAction)converter:(id)sender{
@@ -45,6 +66,11 @@
     int Q =  [inputText.text intValue];
     int remainder;
     int B[20];
+    
+    NSInteger row = [singlePicker selectedRowInComponent:0];
+    NSString *selected = [pickerData objectAtIndex:row];
+    NSLog(@"selected = %@", selected);
+
     NSLog (@"Input Text = %@", inputText);
     
     NSLog(@"Input Number = %d", Q);

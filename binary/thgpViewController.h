@@ -25,6 +25,7 @@
 @property(nonatomic , retain) NSArray *pickerData;
 
 -(IBAction)converter:(id)sender;
+-(IBAction)removeKeyBoard;
 
 
 @end

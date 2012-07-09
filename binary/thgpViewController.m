@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad
 {
-    NSArray *array = [[NSArray alloc]        initWithObjects:@"1",@"2",@"3",@"4",@"5", @"6", @"7", @"8", @"9",nil];
+    NSArray *array = [[NSArray alloc]        initWithObjects:@"2",@"3",@"4",@"5", @"6", @"7", @"8", @"9",nil];
     self.pickerData = array;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -67,8 +67,11 @@ numberOfRowsInComponent:(NSInteger)component
     int remainder;
     int B[20];
     
+    
+    
     NSInteger row = [singlePicker selectedRowInComponent:0];
     NSString *selected = [pickerData objectAtIndex:row];
+    chosenbase = [selected intValue];
     NSLog(@"selected = %@", selected);
 
     NSLog (@"Input Text = %@", inputText);
@@ -96,7 +99,12 @@ numberOfRowsInComponent:(NSInteger)component
     
     
 }
+-(IBAction)removeKeyBoard{
+    [inputText resignFirstResponder];
+    
+    
 
+}
 
 
 
